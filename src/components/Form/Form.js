@@ -1,19 +1,20 @@
 import React, { useState } from "react";
+import useStyles from './styles';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 
 const Form = () => {
     const [postData, setPostData] = useState({
         creator: '', title:'', message:'', tags:'', selectedFile:''});
-//    const classes = useStyles();
+    const classes = useStyles();
 
     const handleSubmit = () => {
 
-    }
+    };
 
     const clear = () => {
 
-    }
+    };
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
