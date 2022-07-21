@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, SHARE, LIKE } from '../constants/actionTypes';
 
 import * as api from '../api/index.js';
 
@@ -32,6 +32,16 @@ export const updatePost = (id, post) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const sharePost = (id, post) => async (dispatch) => {
+    try {
+      const { data } = await api.sharePost(id, post);
+  
+      dispatch({ type: SHARE, payload: data });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
 export const likePost = (id) => async (dispatch) => {
   try {
