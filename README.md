@@ -17,7 +17,8 @@ This is the frontend of the project, using Material-UI to create a user interfac
 ## :pushpin: Future plans
 
 - Users will be able to posts Wisps that contain videos, photos or links
-- ***
+
+---
 
 ## Credits
 
