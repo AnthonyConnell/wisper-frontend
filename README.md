@@ -1,33 +1,36 @@
 # Wisper-api
 
+---
+
 ## Description
 
-Wisper is a free social networking platform similar to twitter for users to connect on and share posts known as Wisps. Users have features such as creating, liking and sharing posts which will appear on their Homepage. To access Wisper, users will need to create an account. 
+Wisper is a free social networking platform similar to twitter for users to connect on and share posts known as Wisps. Users have features such as creating, liking and sharing posts which will appear on their Homepage. To access Wisper, users will need to create an account.
 
 ## Set up and Requirement
 
-Run npm i & npm start to install edpendencies for the project. 
+Run npm i & npm start to install edpendencies for the project.
 
 ## :globe_with_meridians: API
 
 This is the frontend of the project, using Material-UI to create a user interface in our app. This connects to the backend by proxying requests to it. Background used from svgbackgrounds.com
 
-## 	:pushpin: Future plans
+## :pushpin: Future plans
 
 - Users will be able to posts Wisps that contain videos, photos or links
-- 
+- ***
 
 ## Credits
-Anthony Connell
-Carolina Konrad
-Deeana Ireland 
-Jack Wright
-Valeria Garcia 
 
+Anthony Connell [github](https://github.com/AnthonyConnell)
+Carolina Konrad [github](https://github.com/carolinekonrad)
+Deeana Ireland [github](https://github.com/Typerfish)
+Jack Wright [github](https://github.com/Werefox22)
+Valeria Garcia [github](https://github.com/valgarciav)
 
 Front-End: Anthony Connell & Deanna Ireland
 Back-End: Valeria Garcia, Caroline Konrad, & Jack Wright
 
+---
 
 ## License
 
@@ -52,11 +55,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Wisper App Front-End!
-Created by: Anthony Connell, Deanna Ireland, Caroline Konrad, Valeria Garcia, & Jack Wright
-
-Front-End: Anthony Connell & Deanna Ireland
-Back-End: Valeria Garcia, Caroline Konrad, & Jack Wright
-
-Background: From svgbackgrounds.com
