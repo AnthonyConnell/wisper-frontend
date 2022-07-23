@@ -20,5 +20,6 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
+    background: 'rbga(0, 92, 15)',
   },
 }));
