@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Grid, CircularProgress } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 
 import Post from './Post/Post';
 import useStyles from './styles';
 
 const Posts = ({setCurrentId}) => {
-    const posts = useSelector((state) => state.posts);
+//    const posts = useSelector((state) => state.posts);
     const classes = useStyles();
-    const [user, setUser] = useState() 
+    const [userPosts, setUserPosts] = useState() 
 
-    useEffect(async () => {
-        var posts = await fetch("https://wisper-api-71822.herokuapp.com/user/1?withPosts=true");
-        console.log(posts)
-        .then(response => response.json())
-        .then(data => setUser(data.user_id))
-    })
+    useEffect(() => {
+        const fetchData = async () => { 
+            var userPostsRes = await fetch("https://wisper-api-71822.herokuapp.com/user/1?withPosts=true");
+            console.log(userPostsRes)  
+            const userPostsJson = await userPostsRes.json();
+            setUserPosts(userPostsJson);
+        }
+        fetchData();
+    },[])
 
     return (
-        !Posts.length ? <CircularProgress /> : (
+        !userPosts ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3} >
-                {posts.map((post) => (
+                {userPosts.posts.map((post) => (
                     <Grid key={post._id} item xs={12} sm={6}>
-                        <Post post={post} setCurrentId={setCurrentId} />
+                        <Post post={post} />
                     </Grid>
                 ))}
             </Grid>
