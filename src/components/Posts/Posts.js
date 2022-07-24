@@ -14,8 +14,8 @@ const Posts = ({setCurrentId}) => {
     useEffect(() => {
         const fetchData = async () => { 
             var userPostsRes = await fetch("https://wisper-api-71822.herokuapp.com/user/1?withPosts=true");
-            console.log(userPostsRes)  
             const userPostsJson = await userPostsRes.json();
+            console.log(userPostsJson)  
             setUserPosts(userPostsJson);
         }
         fetchData();
@@ -25,8 +25,8 @@ const Posts = ({setCurrentId}) => {
         !userPosts ? <CircularProgress /> : (
             <Grid className={classes.container} container alignItems="stretch" spacing={3} >
                 {userPosts.posts.map((post) => (
-                    <Grid key={post._id} item xs={12} sm={6}>
-                        <Post post={post} />
+                    <Grid key={post.post_id} item xs={12} sm={6}>
+                        <Post post={post} author={userPosts.name} />
                     </Grid>
                 ))}
             </Grid>
