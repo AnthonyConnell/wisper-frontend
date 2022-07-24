@@ -23,14 +23,26 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(postData)
 
-    if (currentId === 0) {
-      dispatch(createPost(postData));
-      clear();
-    } else {
-      dispatch(updatePost(currentId, postData));
-      clear();
-    }
+    let response = await fetch('https://wisper-api-71822.herokuapp.com/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify(postData)
+    })
+
+    let resJson = await response.json()
+    console.log(resJson)
+
+    // if (currentId === 0) {
+    //   dispatch(createPost(postData));
+    //   clear();
+    // } else {
+    //   dispatch(updatePost(currentId, postData));
+    //   clear();
+    // }
   };
 
   return (
