@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 // import { getPosts } from './actions/posts'
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
-import wisp_logo from './images/wisp_logo.png';
+import wisp_logo from './images/Wisp_Logo_BG.png';
 import useStyles from './styles';
 
 const App = () => {
