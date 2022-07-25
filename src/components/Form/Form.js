@@ -44,7 +44,7 @@ const Form = ({ currentId, setCurrentId }) => {
     // }
   };
 
-  return (
+ return (
     <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Write a Wisp'}</Typography>
