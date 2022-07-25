@@ -69,7 +69,10 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
   const refresh = async () => {
     let resPost = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`)
     let resPostJson = await resPost.json()
-    setPost(resPostJson)
+    // make sure the post wasn't deleted
+    if (resPostJson) {
+      setPost(resPostJson)
+    }
   }
 
   return (
