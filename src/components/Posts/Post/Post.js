@@ -10,7 +10,7 @@ import moment from 'moment';
 // import { likePost, deletePost, sharePost } from '../../../actions/posts';
 import useStyles from './styles';
 
-const Post = ({ basePost, author, setCurrentId }) => {
+const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
   // const dispatch = useDispatch();
   const classes = useStyles();
   const [post, setPost] = useState(basePost)
@@ -62,7 +62,7 @@ const Post = ({ basePost, author, setCurrentId }) => {
       }
     })
 
-    // refresh()
+    refreshFeed()
   }
 
   // refresh the post
