@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -7,12 +7,17 @@ import ShareIcon from '@material-ui/icons/Share';
 import moment from 'moment';
 // import { useDispatch } from 'react-redux';
 
-import { likePost, deletePost, sharePost } from '../../../actions/posts';
+// import { likePost, deletePost, sharePost } from '../../../actions/posts';
 import useStyles from './styles';
 
-const Post = ({ post, author, setCurrentId }) => {
+const Post = ({ basePost, author, setCurrentId }) => {
   // const dispatch = useDispatch();
   const classes = useStyles();
+  const [post, setPost] = useState(basePost)
+
+  useEffect(() => {
+    // render?
+  }, [post])
 
   // like post
   const likePost = async () => {
@@ -20,7 +25,7 @@ const Post = ({ post, author, setCurrentId }) => {
       likes: post.likes + 1
     }
 
-    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -28,8 +33,7 @@ const Post = ({ post, author, setCurrentId }) => {
       body: JSON.stringify(data)
     })
 
-    let resJson = await response.json()
-    console.log(resJson)
+    refresh()
   }
 
   // share post
@@ -38,7 +42,7 @@ const Post = ({ post, author, setCurrentId }) => {
       shares: post.shares + 1
     }
 
-    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -46,21 +50,26 @@ const Post = ({ post, author, setCurrentId }) => {
       body: JSON.stringify(data)
     })
 
-    let resJson = await response.json()
-    console.log(resJson)
+    refresh()
   }
 
   // delete post
   const deletePost = async () => {
-    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       }
     })
 
-    let resJson = await response.json()
-    console.log(resJson)
+    // refresh()
+  }
+
+  // refresh the post
+  const refresh = async () => {
+    let resPost = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`)
+    let resPostJson = await resPost.json()
+    setPost(resPostJson)
   }
 
   return (

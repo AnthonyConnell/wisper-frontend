@@ -26,7 +26,7 @@ const Posts = ({setCurrentId}) => {
             <Grid className={classes.container} container alignItems="stretch" spacing={3} >
                 {userPosts.posts.map((post) => (
                     <Grid key={post.post_id} item xs={12} sm={6}>
-                        <Post post={post} author={userPosts.name} />
+                        <Post basePost={post} author={userPosts.name} />
                     </Grid>
                 ))}
             </Grid>
