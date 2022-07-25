@@ -5,14 +5,63 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ShareIcon from '@material-ui/icons/Share';
 import moment from 'moment';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 import { likePost, deletePost, sharePost } from '../../../actions/posts';
 import useStyles from './styles';
 
 const Post = ({ post, author, setCurrentId }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const classes = useStyles();
+
+  // like post
+  const likePost = async () => {
+    let data = {
+      likes: post.likes + 1
+    }
+
+    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify(data)
+    })
+
+    let resJson = await response.json()
+    console.log(resJson)
+  }
+
+  // share post
+  const sharePost = async () => {
+    let data = {
+      shares: post.shares + 1
+    }
+
+    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify(data)
+    })
+
+    let resJson = await response.json()
+    console.log(resJson)
+  }
+
+  // delete post
+  const deletePost = async () => {
+    let response = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    let resJson = await response.json()
+    console.log(resJson)
+  }
 
   return (
     <Card className={classes.card}>
@@ -38,9 +87,9 @@ const Post = ({ post, author, setCurrentId }) => {
       </CardContent>
 
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}><ThumbUpAltIcon fontSize="small" /> {post.likes} Likes </Button>
-        <Button size="small" color="primary" onClick={() => dispatch(sharePost(post._id))}><ShareIcon fontSize="small" /> {post.shares} Shares </Button>
-        <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}><DeleteIcon fontSize="small" />Delete</Button>
+        <Button size="small" color="primary" onClick={() => likePost()}><ThumbUpAltIcon fontSize="small" /> {post.likes} Likes </Button>
+        <Button size="small" color="primary" onClick={() => sharePost()}><ShareIcon fontSize="small" /> {post.shares} Shares </Button>
+        <Button size="small" color="primary" onClick={() => deletePost()}><DeleteIcon fontSize="small" />Delete</Button>
       </CardActions>
     </Card>
   );

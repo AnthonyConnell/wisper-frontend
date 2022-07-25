@@ -16,6 +16,7 @@ const Posts = ({setCurrentId}) => {
             var userPostsRes = await fetch("https://wisper-api-71822.herokuapp.com/user/1?withPosts=true");
             const userPostsJson = await userPostsRes.json();
             setUserPosts(userPostsJson);
+            console.log(userPostsJson)
         }
         fetchData();
     },[])
