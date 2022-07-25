@@ -8,6 +8,8 @@ import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ body: '', user_id: 1, date: Date.now() });
+  const [postSuccess, setPostMessage] = useState({ display: false })
+
   const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
   // const dispatch = useDispatch();
   const classes = useStyles();
@@ -33,6 +35,19 @@ const Form = ({ currentId, setCurrentId }) => {
     })
 
     let resJson = await response.json()
+
+    // update message
+    if (resJson.message) {
+      setPostMessage({
+        display: true,
+        message: "Posted!"
+      })
+    } else {
+      setPostMessage({
+        display: true,
+        message: "Failed to post"
+      })
+    }
     clear()
 
     // if (currentId === 0) {
@@ -54,6 +69,7 @@ const Form = ({ currentId, setCurrentId }) => {
         {/* <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div> */}
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+        <Typography variant="subtitle1">{postSuccess.display ? postSuccess.message : ""}</Typography>
       </form>
     </Paper>
   );
