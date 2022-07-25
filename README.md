@@ -28,12 +28,12 @@ This is the frontend of the project, using React and Material-UI to create a use
 ### Front-end
 Anthony Connell ([github](https://github.com/AnthonyConnell))
 
-Carolina Konrad ([github](https://github.com/carolinekonrad))
+Deanna Ireland ([github](https://github.com/Typerfish))
 
 ### Back-end
-Deana Ireland ([github](https://github.com/Typerfish))
-
 Jack Wright ([github](https://github.com/Werefox22))
+
+Caroline Konrad ([github](https://github.com/carolinekonrad))
 
 Valeria Garcia ([github](https://github.com/valgarciav))
 
