@@ -12,7 +12,11 @@ Run npm i & npm start to install dependencies for the project.
 
 ## :globe_with_meridians: API
 
-This is the frontend of the project deployed to Heroku, using Material-UI to create a user interface in our app. This connects to the backend by proxying requests to it . Background used from svgbackgrounds.com
+This is the frontend of the project, using React and Material-UI to create a user interface in our app. This connects to the backend API, which you can find [here.](https://github.com/Werefox22/wisper-api)
+
+## :bookmark_tabs: Features
+
+- 
 
 ## :pushpin: Future plans
 
@@ -27,15 +31,19 @@ This is the frontend of the project deployed to Heroku, using Material-UI to cre
 ---
 
 ## Credits
+### Front-end
+Anthony Connell ([github](https://github.com/AnthonyConnell))
 
-Anthony Connell [github](https://github.com/AnthonyConnell)
-Carolina Konrad [github](https://github.com/carolinekonrad)
-Deeana Ireland [github](https://github.com/Typerfish)
-Jack Wright [github](https://github.com/Werefox22)
-Valeria Garcia [github](https://github.com/valgarciav)
+Deanna Ireland ([github](https://github.com/Typerfish))
 
-Front-End: Anthony Connell & Deanna Ireland
-Back-End: Valeria Garcia, Caroline Konrad, & Jack Wright
+### Back-end
+Jack Wright ([github](https://github.com/Werefox22))
+
+Caroline Konrad ([github](https://github.com/carolinekonrad))
+
+Valeria Garcia ([github](https://github.com/valgarciav))
+
+Background used from [svgbackgrounds.com](svgbackgrounds.com)
 
 ---
 
