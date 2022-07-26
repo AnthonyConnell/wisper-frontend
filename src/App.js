@@ -45,7 +45,7 @@ const App = () => {
           <DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
-            size={80}
+            size={60}
           />
 
           {/* <DarkModeToggle

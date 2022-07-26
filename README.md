@@ -14,6 +14,8 @@ Run npm i & npm start to install dependencies for the project.
 
 This is the frontend of the project deployed to Heroku, using Material-UI to create a user interface in our app. This connects to the backend by proxying requests to it . Background used from svgbackgrounds.com
 
+This connects to our Backend API found at https://github.com/Werefox22/wisper-api.git
+
 ## :pushpin: Future plans
 
 - Users will be able to posts Wisps that contain videos, photos or links
