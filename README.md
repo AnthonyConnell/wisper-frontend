@@ -4,19 +4,25 @@
 
 ## Description
 
-Wisper is a free social networking platform similar to twitter for users to connect on and share posts known as Wisps. Users have features such as creating, liking and sharing posts which will appear on their Homepage. To access Wisper, users will need to create an account.
+Wisper is a free social networking platform similar to twitter for users to connect on and share posts known as Wisps. Users have features such as creating, liking and sharing posts which will appear on their Homepage. To access Wisper, users will need to create an account. Wisper is also mobile friendly.
 
 ## Set up and Requirement
 
-Run npm i & npm start to install edpendencies for the project.
+Run npm i & npm start to install dependencies for the project.
 
 ## :globe_with_meridians: API
 
-This is the frontend of the project, using Material-UI to create a user interface in our app. This connects to the backend by proxying requests to it. Background used from svgbackgrounds.com
+This is the frontend of the project deployed to Heroku, using Material-UI to create a user interface in our app. This connects to the backend by proxying requests to it . Background used from svgbackgrounds.com
 
 ## :pushpin: Future plans
 
 - Users will be able to posts Wisps that contain videos, photos or links
+- Users will be able to refresh the page with updated posts
+- adding and deleting comments
+- authenticated account creation
+- Notification system with app alerts
+- Following and unfollowing feature
+- Include a trending page
 
 ---
 
