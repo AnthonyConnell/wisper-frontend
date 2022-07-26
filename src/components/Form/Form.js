@@ -25,8 +25,9 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (postData.body.trim() === "") return
 
-    let response = await fetch('https://wisper-api-71822.herokuapp.com/post', {
+    await fetch('https://wisper-api-71822.herokuapp.com/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
