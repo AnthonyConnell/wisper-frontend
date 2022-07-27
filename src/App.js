@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import DarkModeToggle from "react-dark-mode-toggle";
+// import DarkModeToggle from "react-dark-mode-toggle";
 
 // import { getPosts } from './actions/posts'
 import Posts from "./components/Posts/Posts";
@@ -19,15 +19,15 @@ const App = () => {
 
   const [isDarkMode, setIsDarkMode] = useState(() => false);
 
-  const darkTheme = createTheme({
-    palette: {
-      type: "dark",
-    },
-  });
+  // const darkTheme = createTheme({
+  //   palette: {
+  //     type: "dark",
+  //   },
+  // });
 
   return (
     <Container maxwidth="lg">
-      <ThemeProvider theme={darkTheme}>
+      {/* <ThemeProvider theme={darkTheme}> */}
         <AppBar
           className={classes.appBar}
           position="static"
@@ -42,11 +42,11 @@ const App = () => {
             alt="wisper logo"
             height="60"
           />
-          <DarkModeToggle
+          {/* <DarkModeToggle
             onChange={setIsDarkMode}
             checked={isDarkMode}
             size={80}
-          />
+          /> */}
 
           {/* <DarkModeToggle
           onChange={() => setIsDarkMode((prevState) => !prevState)}
@@ -54,7 +54,7 @@ const App = () => {
           size={80}
         /> */}
         </AppBar>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
       <Grow in>
         <Container>
           <Grid

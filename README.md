@@ -1,14 +1,28 @@
+![wisper logo](/src/images/Wisp_Logo_BG.png)
 # Wisper-api
 
 ---
+
+![app demo](/src/images/wisper_showcase.png)
 
 ## Description
 
 Wisper is a free social networking platform similar to twitter for users to connect on and share posts known as Wisps. Users have features such as creating, liking and sharing posts which will appear on their Homepage. To access Wisper, users will need to create an account. Wisper is also mobile friendly.
 
-## Set up and Requirement
+## Set up and Installation
 
-Run npm i & npm start to install dependencies for the project.
+```bash
+npx create-react-app project_name
+npm init -y
+npm install axios moment react-file-base64 redux redux-thunk
+npm install @mui/material-ui/core
+npm install @mui/icons-material --force
+```
+- Axios is used for making API requests
+- Moment is a library for working with time and date
+- React-file-base64 is used for converting images
+- Redux-thunk is used for asynchronous functions in redux
+- Mui is a React component library of UI tools. Mui/Icons must be installed separately. 
 
 ## :globe_with_meridians: API
 
@@ -16,12 +30,15 @@ This is the frontend of the project, using React and Material-UI to create a use
 
 ## :bookmark_tabs: Features
 
-- 
+- Ability to post messages to feed (must refresh)
+- Ability to like posts, share (no functionality as of yet), as well as delete posts 
 
 ## :pushpin: Future plans
 
 - Users will be able to posts Wisps that contain videos, photos or links
 - Users will be able to refresh the page with updated posts
+- Users will be able to edit posts.
+- User will have more fields, such as title, and hashtags
 - adding and deleting comments
 - authenticated account creation
 - Notification system with app alerts
